@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아디다스 메인페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/아디다스.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        $(function(){
+            let header = document.querySelector('.header');
+            //wheel => 휠이벤트, 마우스휠에 따라 이벤트 발생
+            //mousewheel (X) => 예전 이벤트 명칭이라 이제는 사용 안함. 이제는 지원안됨
+
+            window.addEventListener('wheel', (event) => {
+                let wheelScroll = event.deltaY; //deltaX => 휠을 움직일 때 컨텐츠가 옆으로 움직이게
+                if(wheelScroll > 0) {
+                    header.classList.add('on');
+                } else {
+                    header.classList.remove('on');
+                }
+            });
+
+            var swiper = new Swiper(".pick_swiper", {
+                slidesPerView: 4,
+                spaceBetween: 25,
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "progressbar",
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            let pickBtn = document.querySelectorAll('.pick .btn ul li');
+            let pickList = document.querySelectorAll('.pick .list');
+
+            for(let i = 0; i < pickBtn.length; i++){
+                pickBtn[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    pickBtn.forEach((menu) => {
+                        menu.classList.remove('on');
+                    });
+                    pickList.forEach((listMenu) => {
+                        listMenu.classList.remove('on');
+                    });
+                    pickBtn[i].classList.add('on');
+                    pickList[i].classList.add('on');
+                });
+            }
+            //pick
+
+            var swiper = new Swiper(".coll_Swiper", {
+                slidesPerView: 3,
+                spaceBetween: 25,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            let collColor01 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .color01 div');
+            let collImg01 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .figure01 img');
+
+            let collColor02 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .color02 div');
+            let collImg02 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .figure02 img');
+
+            let collColor03 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .color03 div');
+            let collImg03 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .figure03 img');
+
+            let collColor04 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .color04 div');
+            let collImg04 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .figure04 img');
+
+            let collColor05 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .color05 div');
+            let collImg05 = document.querySelectorAll('.coll .right .list .coll_Swiper .swiper-slide .img_list .figure05 img');
+
+            for(let i = 0; i < collColor01.length; i++){
+                collColor01[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    collImg01.forEach((color) => {
+                        color.classList.remove('on');
+                    });
+                    collImg01[i].classList.add('on');
+                });
+            }
+            for(let i = 0; i < collColor02.length; i++){
+                collColor02[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    collImg02.forEach((color) => {
+                        color.classList.remove('on');
+                    });
+                    collImg02[i].classList.add('on');
+                });
+            }
+            for(let i = 0; i < collColor03.length; i++){
+                collColor03[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    collImg03.forEach((color) => {
+                        color.classList.remove('on');
+                    });
+                    collImg03[i].classList.add('on');
+                });
+            }
+            for(let i = 0; i < collColor04.length; i++){
+                collColor04[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    collImg04.forEach((color) => {
+                        color.classList.remove('on');
+                    });
+                    collImg04[i].classList.add('on');
+                });
+            }
+            for(let i = 0; i < collColor05.length; i++){
+                collColor05[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    collImg05.forEach((color) => {
+                        color.classList.remove('on');
+                    });
+                    collImg05[i].classList.add('on');
+                });
+            }
+            //coll
+
+            let blueColor = $('.color .inner .list .item01');
+            let greenColor = $('.color .inner .list .item02');
+            let yellowColor = $('.color .inner .list .item03');
+            let purpleColor = $('.color .inner .list .item04');
+            let text = $('.color .text_slide');
+
+            blueColor.mouseenter(function(){
+                text.css({
+                    'background-color' : '#4eb4ff'
+                })
+            });
+            greenColor.mouseenter(function(){
+                text.css({
+                    'background-color' : '#aeed9c'
+                })
+            });
+            yellowColor.mouseenter(function(){
+                text.css({
+                    'background-color' : '#efcc74'
+                })
+            });
+            purpleColor.mouseenter(function(){
+                text.css({
+                    'background-color' : '#b2c1f3'
+                })
+            });
+            //color
+
+            let sportsBtn = document.querySelectorAll('.sports .btn ul li');
+            let sportsList = document.querySelectorAll('.sports .list');
+
+            for(let i = 0; i < sportsBtn.length; i++){
+                sportsBtn[i].addEventListener('click', () => {
+                    event.preventDefault();
+                    sportsBtn.forEach((menu) => {
+                        menu.classList.remove('on');
+                    });
+                    sportsList.forEach((listMenu) => {
+                        listMenu.classList.remove('on');
+                    });
+                    sportsBtn[i].classList.add('on');
+                    sportsList[i].classList.add('on');
+                });
+            }
+        });//script end
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="#"><img src="img/iogo.png" alt="로고"></a>
+                </h1><!-- logo end -->
+                <nav class="nav">
+                   <div class="left_nav">
+                        <ul class="gnb">
+                            <li>
+                                <a href="#" class="depth01">MEN</a>
+                                <ul class="depth02">
+                                    <li><a href="#">베스트셀러</a></li>
+                                    <li><a href="#">신상품</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">스포츠</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+
+                            <li>
+                                <a href="#" class="depth01">WOMEN</a>
+                                <ul class="depth02">
+                                    <li><a href="#">베스트셀러</a></li>
+                                    <li><a href="#">신상품</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">스포츠</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+
+                            <li>
+                                <a href="#" class="depth01">KIDS</a>
+                                <ul class="depth02">
+                                    <li><a href="#">베스트셀러</a></li>
+                                    <li><a href="#">신상품</a></li>
+                                    <li><a href="#">신발</a></li>
+                                    <li><a href="#">의류</a></li>
+                                    <li><a href="#">용품</a></li>
+                                    <li><a href="#">컬렉션</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+
+                            <li>
+                                <a href="#" class="depth01">SPORTS</a>
+                                <ul class="depth02">
+                                    <li><a href="#">러닝</a></li>
+                                    <li><a href="#">트레이닝</a></li>
+                                    <li><a href="#">아웃도어</a></li>
+                                    <li><a href="#">축구</a></li>
+                                    <li><a href="#">골프</a></li>
+                                    <li><a href="#">기타</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+
+                            <li>
+                                <a href="#" class="depth01">BRANDS</a>
+                                <ul class="depth02">
+                                    <li><a href="#">ORIGINALS</a></li>
+                                    <li><a href="#">SPORTSWEAR</a></li>
+                                    <li><a href="#">TERREX</a></li>
+                                    <li><a href="#">Y-3</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="depth01">ONLINE OUTLET</a>
+                                <ul class="depth02">
+                                    <li><a href="#">남성</a></li>
+                                    <li><a href="#">여성</a></li>
+                                    <li><a href="#">키즈</a></li>
+                                    <li><a href="#">ONLINE OUTLET</a></li>
+                                </ul><!-- depth02 end -->
+                            </li>
+                        </ul><!-- gnb end -->
+                   </div><!-- left_nav end -->
+
+                   <div class="right_nav">
+                        <div class="search">
+                            <input type="text" placeholder="search">
+                            <a href="#"><img src="img/Search (2).png" alt="돋보기"></a>
+                        </div><!-- search end -->
+                        <div class="icon">
+                            <a href="#"><img src="img/Vector 15 (1).png" alt="하트"></a>
+                            <a href="#"><img src="img/Bag_alt_light (1).png" alt="장바구니"></a>
+                            <a href="#"><img src="img/User_alt_light (1).png" alt="개인정보"></a>
+                        </div><!-- icon end -->
+                   </div><!-- right_nav end -->
+                </nav><!-- nav end -->
+            </div><!-- inner end -->
+        </header><!-- header end -->
+        
+        <main class="main">
+            <section class="main_visual">
+                <div class="video">
+                    <video autoplay muted loop>
+                        <source src="img/originals_ss24_sl72_mh_2_d_26f1c3929a.mp4" type="video/mp4">
+                    </video>
+                </div><!-- video end -->
+                <div class="main_text">
+                    <h2>SL72</h2>
+                    <p>날렵한 로우컷 실루엣과 스타일리시한 매력으로 <br />
+                        전 세계 크리에이터의 마음을 사로잡은 70년대 러닝의 아이콘
+                    </p>
+                    <span><a href="#">구매하기</a></span>
+                </div><!-- main_text end -->
+            </section><!-- main_visual end -->
+
+            <section class="samba">
+                <div class="inner">
+                    <h3>SAMBA, SPEZIAL&GAZELLE</h3>
+                    <div class="btn">
+                        <h4>하나의 오리지널, 그로부터 시작된 수천개의 이야기</h4>
+                        <a href="#">자세히보기</a>
+                    </div>
+                    <div class="samba_img">
+                        <figure>
+                            <a href="#"><img src="img/1.png" alt="삼바1"></a>
+                        </figure>
+                        <figure>
+                            <a href="#"><img src="img/2.png" alt="삼바2"></a>
+                        </figure>
+                        <figure>
+                            <a href="#"><img src="img/3.png" alt="삼바3"></a>
+                        </figure>
+                    </div><!-- samba_img end -->
+                </div><!-- inner end -->
+            </section><!-- samba end -->
+
+            <section class="pick">
+                <div class="inner">
+                    <h3>ADIDAS PICK</h3>
+                    <div class="btn">
+                        <ul>
+                            <li class="on"><a href="#">BEST OF ADIDAS</a></li>
+                            <li><a href="#">TREND NOW</a></li>
+                            <li><a href="#">Daily Hoodie</a></li>
+                            <li><a href="#">Track top & pants</a></li>
+                            <li><a href="#">WIND BREAKER</a></li>
+                        </ul>
+                        <a href="#">전체보기</a>
+                    </div><!-- btn end -->
+
+                    <div class="list on">
+                        <div class="swiper pick_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/4.png" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>삼바 OG</h5>
+                                    <p>Originals</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/5.png" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>핸드볼 스페지알</h5>
+                                    <p>Originals</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/6.png" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>디오나 2.0</h5>
+                                    <p>Originals</p>
+                                    <strong>69,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/7.png" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>클라우드폼 무브 라운저</h5>
+                                    <p>Originals</p>
+                                    <strong>69,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/4.1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Samoa Shoes</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/5.1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>R71</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/6.1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>STADT</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/7.1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Samoa Shoes</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/7.2.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>STADT</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="swiper pick_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>핸드볼 스페지알</h5>
+                                    <p>Originals</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend2.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Samoa Shoes</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend3.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>R71</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend4.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>STADT</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend5.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Samoa Shoes</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend6.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>R71</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend7.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>STADT</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/trend8.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>R71</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="swiper pick_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>에센셜 프렌치 테리 3S 후디</h5>
+                                    <p>Sportswear</p>
+                                    <strong>79,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily2.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>에센셜 프렌치 테리 3S 풀집 후디</h5>
+                                    <p>Sportswear</p>
+                                    <strong>62,300원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily3.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>에센셜 프렌치 테리 3S 후디</h5>
+                                    <p>Sportswear</p>
+                                    <strong>55,300원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily4.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Z.N.E 풀집 후드 트랙 재킷</h5>
+                                    <p>Sportswear</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily5.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>NEW 아디다스 Z.N.E.후디</h5>
+                                    <p>Sportswear</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily6.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Z.N.E.풀집 후드 트랙 재킷</h5>
+                                    <p>Sportswear</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily7.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>M A SZN FL HD</h5>
+                                    <p>Sportswear</p>
+                                    <strong>89,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/daily8.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>Z.N.E.풀집 후드 트랙 재킷</h5>
+                                    <p>Sportswear</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="swiper pick_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 우븐 파이어버드 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track2.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 클래식 파이어버드 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track3.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>WAFFLE BBTP</h5>
+                                    <p>Originals</p>
+                                    <strong>105,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track4.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 클래식 파이어버드 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track5.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 우븐 파이어버드 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track6.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 클래식 파이어버드 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track7.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 70s 트랙 팬츠</h5>
+                                    <p>Originals</p>
+                                    <strong>89,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/track8.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 클래식 파이어버드 트랙 팬츠</h5>
+                                    <p>Originals</p>
+                                    <strong>105,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="swiper pick_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind1.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>BS JACKET</h5>
+                                    <p>Originals</p>
+                                    <strong>179,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind2.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>스케이트보딩 클래식 아노락 재킷</h5>
+                                    <p>Originals</p>
+                                    <strong>119,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind3.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>에센셜 3S 우븐 윈드브레이커</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind4.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>에센셜 3S 우븐 윈드브레이커</h5>
+                                    <p>Originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind5.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>'80s 나일론 아카이브 3S 트랙탑</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind6.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 트레포일 윈드브레이커</h5>
+                                    <p>Originals</p>
+                                    <strong>109,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind7.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아딜레늄 시즌 2 모토 데님 재킷</h5>
+                                    <p>Originals</p>
+                                    <strong>219,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                              <div class="swiper-slide">
+                                <figure>
+                                    <img src="img/wind8.avif" alt="베스트">
+                                </figure>
+                                <div class="pick_text">
+                                    <h5>아디컬러 우븐 크루넥 윈드브레이커</h5>
+                                    <p>Originals</p>
+                                    <strong>129,000원</strong>
+                                </div><!-- pick_text end -->
+                              </div><!-- swiper-slide end -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+            </section><!-- pick end -->
+
+            <section class="coll">
+                <div class="inner">
+                    <h3>COLLECTION</h3>
+                    <div class="coll_flex">
+                        <div class="left">
+                            <figure>
+                                <img src="img/kr_sl_72_originals_fw24_hp_card_asset_d_0b746f3906.gif" alt="img">
+                            </figure>
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="coll_title">
+                                <h4>SL 72</h4>
+                                <p>오늘의 스트릿 스타일을 리드하는 70년대 러닝의 아이콘</p>
+                            </div><!-- coll_title end -->
+                            <div class="list">
+                                <div class="swiper coll_Swiper">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <div class="img_list">
+                                            <figure class="figure01">
+                                                <img src="img/sl-72_1-1.avif" alt="베스트" class="on">
+                                                <img src="img/sl-72_1-2.avif" alt="베스트">
+                                                <img src="img/sl-72_1-3.avif" alt="베스트">
+                                                <img src="img/sl-72_1-4.avif" alt="베스트">
+                                            </figure>
+                                            <div class="color01">
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                            </div>
+                                        </div><!-- img_list end -->
+                                        <div class="pick_text">
+                                            <h5>SL 72 OG</h5>
+                                            <p>Originals</p>
+                                            <strong>129,000원</strong>
+                                        </div><!-- pick_text end -->
+                                      </div><!-- swiper slide end -->
+
+                                      <div class="swiper-slide">
+                                        <div class="img_list">
+                                            <figure class="figure02">
+                                                <img src="img/sl-72_2-1.avif" alt="베스트" class="on">
+                                                <img src="img/sl-72_2-2.avif" alt="베스트">
+                                                <img src="img/sl-72_2-3.avif" alt="베스트">
+                                                <img src="img/sl-72_2-4.avif" alt="베스트">
+                                            </figure>
+                                            <div class="color02">
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                            </div>
+                                        </div><!-- img_list end -->
+                                        <div class="pick_text">
+                                            <h5>SL 72 RS</h5>
+                                            <p>Originals</p>
+                                            <strong>129,000원</strong>
+                                        </div><!-- pick_text end -->
+                                      </div><!-- swiper slide end -->
+
+                                      <div class="swiper-slide">
+                                        <div class="img_list">
+                                            <figure class="figure03">
+                                                <img src="img/sl-72_3-1.avif" alt="베스트" class="on">
+                                                <img src="img/sl-72_3-2.avif" alt="베스트">
+                                                <img src="img/sl-72_3-3.avif" alt="베스트">
+                                            </figure>
+                                            <div class="color03">
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                            </div>
+                                        </div><!-- img_list end -->
+                                        <div class="pick_text">
+                                            <h5>SL 72 RS</h5>
+                                            <p>Originals</p>
+                                            <strong>129,000원</strong>
+                                        </div><!-- pick_text end -->
+                                      </div><!-- swiper slide end -->
+
+                                      <div class="swiper-slide">
+                                        <div class="img_list">
+                                            <figure class="figure04">
+                                                <img src="img/sl-72_4-1.avif" alt="베스트" class="on">
+                                                <img src="img/sl-72_4-2.avif" alt="베스트">
+                                                <img src="img/sl-72_4-3.avif" alt="베스트">
+                                            </figure>
+                                            <div class="color04">
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                            </div>
+                                        </div><!-- img_list end -->
+                                        <div class="pick_text">
+                                            <h5>SL 72 RS</h5>
+                                            <p>Originals</p>
+                                            <strong>129,000원</strong>
+                                        </div><!-- pick_text end -->
+                                      </div><!-- swiper slide end -->
+
+                                      <div class="swiper-slide">
+                                        <div class="img_list">
+                                            <figure class="figure05">
+                                                <img src="img/sl-72_5-1.avif" alt="베스트" class="on">
+                                                <img src="img/sl-72_5-2.avif" alt="베스트">
+                                            </figure>
+                                            <div class="color05">
+                                                <div><span>컬러1</span></div>
+                                                <div><span>컬러1</span></div>
+                                            </div>
+                                        </div><!-- img_list end -->
+                                        <div class="pick_text">
+                                            <h5>SL 72 RS</h5>
+                                            <p>Originals</p>
+                                            <strong>129,000원</strong>
+                                        </div><!-- pick_text end -->
+                                      </div><!-- swiper slide end -->
+                                    </div><!-- swiper-wrapper end -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                  </div>
+                            </div><!-- list end -->
+                        </div><!-- right end -->
+                    </div><!-- coll_flex end -->
+                </div><!-- inner end -->
+            </section><!-- coll end -->
+
+            <section class="color">
+                <div class="inner">
+                    <h3>ADICOLOR</h3>
+                    <div class="list">
+                        <div class="item item01">
+                            <figure>
+                                <img src="img/11.png" alt="color">
+                            </figure>
+                            <div class="text">
+                                <h5>BLUE</h5>
+                                <p>adicolor</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+
+                        <div class="item item02">
+                            <figure>
+                                <img src="img/12.png" alt="color">
+                            </figure>
+                            <div class="text">
+                                <h5>GREEN</h5>
+                                <p>adicolor</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+
+                        <div class="item item03">
+                            <figure>
+                                <img src="img/13.png" alt="color">
+                            </figure>
+                            <div class="text">
+                                <h5>YELLOW</h5>
+                                <p>adicolor</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+
+                        <div class="item item04">
+                            <figure>
+                                <img src="img/14.png" alt="color">
+                            </figure>
+                            <div class="text">
+                                <h5>PURPLE</h5>
+                                <p>adicolor</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+                <div class="text_slide">
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                    <span>ADICOLOR ADICOLOR</span>
+                </div>
+            </section><!-- color end -->
+
+            <section class="sports">
+                <div class="inner">
+                    <h3>SPORTS</h3>
+                    <div class="btn">
+                        <ul>
+                            <li class="on"><a href="#">축구</a></li>
+                            <li><a href="#">골프</a></li>
+                            <li><a href="#">테니스</a></li>
+                            <li><a href="#">농구</a></li>
+                            <li><a href="#">사이클링</a></li>
+                        </ul>
+                    </div><!-- btn end -->
+
+                    <div class="list on">
+                        <div class="left">
+                            <figure>
+                                <img src="img/15.png" alt="img">
+                            </figure>
+                            <div class="text">
+                                <h4>ENERGY CITRUS PACK</h4>
+                                <p>프레데터, X, 코파. 봄의 에너지를 담아 <br>
+                                    싱그러운 시트러스 컬러로 돌아오다.
+                                </p>
+                            </div><!-- text end -->
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/16.png" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>맨체스터 유나이티드 스톤 로지스 프리매치 저지</h5>
+                                    <p>Football</p>
+                                    <strong>89,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/17.png" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>X 크레이지패스트 클럽 H&L TF</h5>
+                                    <p>키즈 Football</p>
+                                    <strong>59,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+                        </div><!-- right end -->
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="left">
+                            <figure>
+                                <img src="img/golf_left.avif" alt="img">
+                            </figure>
+                            <div class="text text01">
+                                <h4>CODECHAOS 25 EVENT</h4>
+                                <p>코드케이오스25 구매하고 골프 의류 할인을 <br>
+                                    받아보세요.[9/6 ~ 9/26]
+                                </p>
+                            </div><!-- text end -->
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/golf01.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>코드케이오스 보아 25 스파이크리스</h5>
+                                    <p>남성 Golf</p>
+                                    <strong>269,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/golf02.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>코드케이오스 보아 25 스파이크리스</h5>
+                                    <p>Women Golf</p>
+                                    <strong>269,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+                        </div><!-- right end -->
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="left">
+                            <figure>
+                                <img src="img/테니스.png" alt="img">
+                            </figure>
+                            <div class="text text01">
+                                <h4>TENNIS SHOES</h4>
+                                <p>게임을 압도하는 퍼포먼스, 아디다스 테니스화</p>
+                            </div><!-- text end -->
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/tennis01.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>아디제로 우버소닉 4.1</h5>
+                                    <p>Women Tennis</p>
+                                    <strong>179,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/tennis02.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>바리케이트 13</h5>
+                                    <p>남성 Tennis</p>
+                                    <strong>189,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+                        </div><!-- right end -->
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="left">
+                            <figure>
+                                <img src="img/Basket.png" alt="img">
+                            </figure>
+                            <div class="text text01">
+                                <h4>ANTHONY EDWARDS 1</h4>
+                                <p>정상을 향한 앤서니의 에드워즈의 도약은 이제 <br>
+                                    시작일 뿐이야. 이건 진짜야.
+                                </p>
+                            </div><!-- text end -->
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/Basket01.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>앤서니 에드워즈 1 LS 팬츠</h5>
+                                    <p>남성 Basketball</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/Basket02.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>앤서니 에드워즈 파운데이션 크루 스웨트셔츠</h5>
+                                    <p>남성 originals</p>
+                                    <strong>99,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+                        </div><!-- right end -->
+                    </div><!-- list end -->
+
+                    <div class="list">
+                        <div class="left">
+                            <figure>
+                                <img src="img/사이클링.jpg" alt="img">
+                            </figure>
+                        </div><!-- left end -->
+
+                        <div class="right">
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/Cycling01.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>템포 3S 사이클링 저지</h5>
+                                    <p>Women Cycling</p>
+                                    <strong>139,000원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+
+                            <div class="item">
+                                <div class="img">
+                                    <figure>
+                                        <img src="img/Cycling02.avif" alt="img">
+                                    </figure>
+                                </div><!-- img end -->
+                                <div class="text">
+                                    <h5>에어로레디 인도어 사이클링 빕 쇼츠</h5>
+                                    <p>남성 Cycling</p>
+                                    <strong>151,200원</strong>
+                                </div><!-- text end -->
+                            </div><!-- item end -->
+                        </div><!-- right end -->
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+            </section><!-- sports -->
+
+            <section class="story">
+                <div class="inner">
+                    <h3>STORY</h3>
+                    <div class="list">
+                        <div class="item">
+                            <figure>
+                                <img src="img/18.png" alt="img">
+                            </figure>
+                            <div class="text">
+                                <h5>하나의 슈퍼스타, 그로부터 시작된 수천 개의 이야기</h5>
+                                <p>농구코트에서 태어나 문화의 아이콘으로 자리잡은 슈퍼스타의 스토리를 만나보세요.</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+
+                        <div class="item">
+                            <figure>
+                                <img src="img/19.png" alt="img">
+                            </figure>
+                            <div class="text">
+                                <h5>하나의 가젤: 그로부터 시작된 수천 개의 이야기</h5>
+                                <p>트레이닝화로 시작해 스타 아이콘으로 자리잡은 가젤의 스토리를 만나보세요.</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+                        <div class="item">
+                            <figure>
+                                <img src="img/20.png" alt="img">
+                            </figure>
+                            <div class="text">
+                                <h5>하나의 삼바: 그로부터 시작된 수천 개의 이야기</h5>
+                                <p>축구화로 시작해 스트릿 패션의 아이코닉한 상징으로 자리잡은 삼바의 스토리를 만나보세요.</p>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+            </section><!-- story end -->
+
+            <section class="adidas">
+                <div class="inner">
+                    <h3>ADIDAS IS</h3>
+                    <div class="list">
+                        <div class="item">
+                            <figure>
+                                <a href="#"><img src="img/21.png" alt="img"></a>
+                            </figure>
+                            <div class="text">
+                                <h5>1949년부터, 스토리와 스타일, <br>
+                                    스포츠를 이끌다.
+                                </h5>
+                                <a href="#">자세히보기</a>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+
+                        <div class="item">
+                            <figure>
+                                <a href="#"><img src="img/22.png" alt="img"></a>
+                            </figure>
+                            <div class="text">
+                                <h5>세상의 모든 스포츠를 <br>
+                                    포용하는 브랜드
+                                </h5>
+                                <a href="#">자세히보기</a>
+                            </div><!-- text end -->
+                        </div><!-- item end -->
+                    </div><!-- list end -->
+                </div><!-- inner end -->
+            </section><!-- adidas end -->
+
+            <section class="member">
+                <figure>
+                    <img src="img/23.png" alt="img">
+                </figure>
+                <div class="text">
+                    <h5>지금 멤버십 가입하고 10% 할인혜택 받으세요</h5>
+                    <p>*이메일 수신동의자에 한해 10% 할인쿠폰 발급</p>
+                    <a href="#">회원가입</a>
+                </div><!-- text -->
+            </section><!-- member end -->
+        </main><!-- main end -->
+
+        <footer class="footer">
+            <div class="inner">
+                <div class="list">
+                    <ul>
+                        <li>PRODUCTS</li>
+                        <li>신상품</li>
+                        <li>공식 아울렛</li>
+                    </ul>
+
+                    <ul>
+                        <li>COMPANY INFO</li>
+                        <li>회사소개</li>
+                        <li>채용정보</li>
+                        <li>아디다스 앱</li>
+                        <li>컨펌드 앱</li>
+                        <li>아디다스 블로그</li>
+                    </ul>
+
+                    <ul>
+                        <li>MEMBERSHIP</li>
+                        <li>아디클럽</li>
+                        <li>adidas Runners</li>
+                    </ul>
+
+                    <ul>
+                        <li>SUPPORT</li>
+                        <li>고객센터, 심의수선</li>
+                        <li>주문 / 배송조회</li>
+                        <li>FAQ</li>
+                        <li>구매 이용약관</li>
+                    </ul>
+                    <ul>
+                        <li>FOLLOW US</li>
+                        <li><img src="img/Facebook.png" alt="img"></li>
+                        <li><img src="img/twitter.png" alt="img"></li>
+                        <li><img src="img/Instagram.png" alt="img"></li>
+                    </ul>
+                </div><!-- list end -->
+                <span>아디다스코리아(유) | 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620) | 대표자: 곽근엽 | 사업자 등록번호: 214-81-07412 | 통신판매업신고: 2007-서울서초-10391 | 개인정보관리책임자: 장영태 | 호스팅서비스사업자: 아디다스코리아(유) | 고객센터: 1588-8241 | 이메일: service@onlineshop.adidas.co.kr</span>
+                <div class="bottom">
+                    <span>쿠키설정</span>
+                    <span>구매 약관동의</span>
+                    <span>개인정보 처리방침</span>
+                    <span>아디클럽 이용약관</span>
+                    <span>사업자정보확인</span>
+                    <span>공정거래 자율준수</span>
+                    <span>채무지급보증안내</span>
+                </div><!-- bottom end -->
+            </div><!-- inner end -->
+        </footer><!-- footer end -->
+    </div><!-- wrap end -->
+</body>
+</html>
